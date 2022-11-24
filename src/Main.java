@@ -1,16 +1,30 @@
+import transport.Car;
+
 public class Main {
     public static void main(String[] args) {
 
-        Car ladaGranta = new Car("Lada ", "Granta", 1.7, "Желтый", 2015, "Россия");
-        System.out.println("Автомобиль: " + ladaGranta.getBrand() + " " + ladaGranta.getModel() + ". Двигатель - " + ladaGranta.engineVolume+ " л. Цвет кузова - " + ladaGranta.getColor()+ ". Год выпуска - " + ladaGranta.getProductionYear() + ". Страна производства - "+ ladaGranta.getProductionCountry()+ ".");
-        Car audi = new Car("Audi ", "A8 50 L TDI quattro", 3.0, "Черный", 2020, "Германия");
-        System.out.println("Автомобиль: " + audi.getBrand() + " " + audi.getModel() + ". Двигатель - " + audi.engineVolume+ " л. Цвет кузова - " + audi.getColor()+ ". Год выпуска - " + audi.getProductionYear() + ". Страна производства - "+ audi.getProductionCountry()+ ".");
-        Car bmw = new Car("BMW ", "Z8", 3.0, "Черный", 2021, "Германия");
-        System.out.println("Автомобиль: " + bmw.getBrand() + " " + bmw.getModel() + ". Двигатель - " + bmw.engineVolume+ " л. Цвет кузова - " + bmw.getColor()+ ". Год выпуска - " + bmw.getProductionYear() + ". Страна производства - "+ bmw.getProductionCountry()+ ".");
-        Car kia = new Car("KIA ", "Sportage 4 ", 2.4, "Красный", 2018, "Южная Корея");
-        System.out.println("Автомобиль: " + kia.getBrand() + " " + kia.getModel() + ". Двигатель - " + kia.engineVolume+ " л. Цвет кузова - " + kia.getColor()+ ". Год выпуска - " + kia.getProductionYear() + ". Страна производства - "+ kia.getProductionCountry()+ ".");
-        Car hundai = new Car("Hundai ", "Avante", 1.6, "Оранжевый", 2016, "Южная Корея");
-        System.out.println("Автомобиль: " + hundai.getBrand() + " " + hundai.getModel() + ". Двигатель - " + hundai.engineVolume+ " л. Цвет кузова - " + hundai.getColor()+ ". Год выпуска - " + hundai.getProductionYear() + ". Страна производства - "+ hundai.getProductionCountry()+ ".");
+        Car ladaGranta = new Car("Lada ", "Granta", 1.7, "Желтый", 2015, "Россия","Автоматическая", "Хетчбек", "п232пп23", "5", "Зимние");
+        Car audi = new Car("Audi ", "A8 50 L TDI quattro", 3.0, "Черный", 2020, "Германия","Механика","","","","");
+        Car bmw = new Car("BMW ", "Z8", 3.0, "Черный", 2021, "Германия","","","","","");
+        Car kia = new Car("KIA ", "Sportage 4 ", 2.4, "Красный", 2018, "Южная Корея","","","","","");
+        Car hundai = new Car("Hundai ", "Avante", 1.6, "Оранжевый", 2016, "Южная Корея","","","","","");
+
+        printInfo(ladaGranta);
+        printInfo(audi);
+        printInfo(bmw);
+        printInfo(kia);
+        printInfo(hundai);
 
     }
+    private static void printInfo(Car car) {
+        System.out.println("Автомобиль: " + car.getBrand() + " " + car.getModel() +
+                ". Двигатель - " + car.getEngineVolume() + " л. Цвет кузова - " + car.getColor() +
+                ". Год выпуска - " + car.getProductionYear() + ". Страна производства - " +
+                car.getProductionCountry() + ". Тип трансмиссии - " + car.getTransmission() +
+                ". Тип кузова - " + car.getBodyType() + ". Регистрационный номер - " + car.getRegistrationNumber() +
+                ". Количество мест - " + car.getNumberSeats() + ". Шины - " + car.getTireIndication() + ". ");
+    }
+
+
+
 }
