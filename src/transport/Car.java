@@ -1,5 +1,7 @@
 package transport;
 
+import java.time.LocalDate;
+
 public class Car {
     private String brand;
     private String model;
@@ -14,31 +16,31 @@ public class Car {
     private String tireIndication;
 
     public Car(String brand, String model, double engineVolume,
-        String color, int productionYear, String productionCountry,
-        String transmission,String bodyType,String registrationNumber,
-        String numberSeats,String tireIndication) {
+               String color, int productionYear, String productionCountry,
+               String transmission, String bodyType, String registrationNumber,
+               String numberSeats, String tireIndication) {
 
-       if (brand == null || brand.isEmpty() || brand.isBlank()){
-           this.brand = "default";
-       }else {
-           this.brand = brand;
-       }
+        if (brand == null || brand.isEmpty() || brand.isBlank()) {
+            this.brand = "Рукожопство";
+        } else {
+            this.brand = brand;
+        }
 
-        if (model == null || brand.isEmpty() || brand.isBlank()){
-            this.model = "default";
-        }else {
+        if (model == null || model.isEmpty() || model.isBlank()) {
+            this.model = "Самоделка";
+        } else {
             this.model = model;
         }
 
-        if (engineVolume < 0){
+        if (engineVolume < 0) {
             this.engineVolume = 1.5;
         } else {
             this.engineVolume = engineVolume;
         }
 
-        if (color == null || brand.isEmpty() || brand.isBlank()){
+        if (color == null || color.isEmpty() || color.isBlank()) {
             this.color = "белый";
-        }else {
+        } else {
             this.color = color;
         }
 
@@ -49,38 +51,37 @@ public class Car {
         }
 
         if (productionCountry == null || productionCountry.isEmpty() || productionCountry.isBlank()) {
-            this.productionCountry = "default";
+            this.productionCountry = "Гондурас";
         } else {
             this.productionCountry = productionCountry;
         }
-        if (color == null || brand.isEmpty() || brand.isBlank()){
-            this.transmission = "default";
-        }else {
+        if (transmission == null || transmission.isEmpty() || transmission.isBlank()) {
+            this.transmission = "Механическая";
+        } else {
             this.transmission = transmission;
         }
-        if (color == null || brand.isEmpty() || brand.isBlank()){
-            this.bodyType = "default";
-        }else {
+        if (bodyType == null || bodyType.isEmpty() || bodyType.isBlank()) {
+            this.bodyType = "Седан";
+        } else {
             this.bodyType = bodyType;
         }
-        if (color == null || brand.isEmpty() || brand.isBlank()){
-            this.registrationNumber = "default";
-        }else {
+        if (registrationNumber == null || registrationNumber.isEmpty() || registrationNumber.isBlank()) {
+            this.registrationNumber = "ф000фф00";
+        } else {
             this.registrationNumber = registrationNumber;
         }
-        if (color == null || brand.isEmpty() || brand.isBlank()){
-            this.numberSeats = "default";
-        }else {
+        if (numberSeats == null || numberSeats.isEmpty() || numberSeats.isBlank()) {
+            this.numberSeats = "5";
+        } else {
             this.numberSeats = numberSeats;
         }
-        if (color == null || brand.isEmpty() || brand.isBlank()){
-            this.tireIndication = "default";
-        }else {
+        if (tireIndication == null || tireIndication.isEmpty() || tireIndication.isBlank()) {
+            this.numberSeats = "Летние";
+        } else {
             this.tireIndication = tireIndication;
         }
-
-
     }
+
 
     public String getBrand() {
         return brand;
@@ -118,13 +119,11 @@ public class Car {
         return registrationNumber;
     }
 
-    public String getTireIndication() {
-        return tireIndication;
-    }
 
     public String getTransmission() {
         return transmission;
     }
+
 
     public void setBodyType(String bodyType) {
         this.bodyType = bodyType;
@@ -162,11 +161,37 @@ public class Car {
         this.registrationNumber = registrationNumber;
     }
 
-    public void setTireIndication(String tireIndication) {
-        this.tireIndication = tireIndication;
-    }
 
     public void setTransmission(String transmission) {
         this.transmission = transmission;
     }
+
+
+    public String getTireIndication() {
+        return tireIndication;
+    }
+
+    public void setTireIndication(String tireIndication) {
+        this.tireIndication = tireIndication;
+    }
+
+    LocalDate today = LocalDate.now();
+    LocalDate changeTiresWinter = LocalDate.of(2023, 11, 1);
+    LocalDate changeTiresSummer = LocalDate.of(2023, 4, 1);
+
+    public String changeTires() {
+        if (changeTiresWinter == today) {
+            System.out.println("Сменить шины на зимние!");
+        }
+        if (changeTiresSummer == today) {
+            System.out.println("сменить шины на летние!");
+        } else {
+            return null;
+        }
+        return null;
+    }
 }
+
+
+
+
