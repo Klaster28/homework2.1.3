@@ -14,11 +14,14 @@ public class Car {
     private String registrationNumber;
     private String numberSeats;
     private String tireIndication;
+    private Key key;
+    private Insurance insurance;
+
 
     public Car(String brand, String model, double engineVolume,
                String color, int productionYear, String productionCountry,
                String transmission, String bodyType, String registrationNumber,
-               String numberSeats, String tireIndication) {
+               String numberSeats, String tireIndication, Key key, Insurance insurance) {
 
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = "Рукожопство";
@@ -79,6 +82,16 @@ public class Car {
             this.numberSeats = "Летние";
         } else {
             this.tireIndication = tireIndication;
+        }
+        if (key == null) {
+            this.key = new Key();
+        }else {
+            this.key = key;
+        }
+        if (insurance == null) {
+            this.insurance = new Insurance();
+        }else {
+            this.insurance = insurance;
         }
     }
 
@@ -195,15 +208,100 @@ public class Car {
         if (registrationNumber.length() != 8) {
             return false;
         }
-        char [] chars = registrationNumber.toCharArray();
+        char[] chars = registrationNumber.toCharArray();
         if (!Character.isAlphabetic(chars[0]) || !Character.isAlphabetic(chars[4]) || !Character.isAlphabetic(chars[5])) {
             return false;
         }
         if (Character.isDigit(chars[1]) && Character.isDigit(chars[2]) && Character.isDigit(chars[3]) && Character.isDigit(chars[6]) && Character.isDigit(chars[7])) {
             Character.isDigit(chars[8]);
+            return false;
         }
-        return false;
+        return true;
     }
+
+    public class Key {
+        private final boolean remoteEngineStart;
+        private final boolean keylessAccess;
+
+        public  Key(boolean remoteEngineStart, boolean keylessAccess) {
+            this.keylessAccess = keylessAccess;
+            this.remoteEngineStart = remoteEngineStart;
+
+        }
+
+
+        public boolean isKeylessAccess() {
+            return keylessAccess;
+        }
+
+        public boolean isRemoteEngineStart() {
+            return remoteEngineStart;
+        }
+
+
+    }
+
+    public Key getKey() {
+        return key;
+    }
+
+    public Insurance getInsurance() {
+        return insurance;
+    }
+
+    public static class Insurance {
+        private final LocalDate insuranceValidityPeriod;
+        private final double costInsurance;
+        private final String itrnsuranceNumber;
+
+
+            public Insurance (LocalDate insuranceValidityPeriod, double costInsurance, String itrnsuranceNumber) {
+            if (insuranceValidityPeriod == null) {
+                this.insuranceValidityPeriod = LocalDate.now().plusDays(365);
+            } else {
+                this.insuranceValidityPeriod = insuranceValidityPeriod;
+            }
+            if (costInsurance < 0) {
+                this.costInsurance = 0;
+            } else {
+                this.costInsurance = costInsurance;
+            }
+            if (itrnsuranceNumber == null) {
+                this.itrnsuranceNumber = "123456789";
+            } else {
+                this.itrnsuranceNumber = itrnsuranceNumber;
+            }
+
+        }
+       public Insurance(){
+           this(null, 3000, "234567872");
+       }
+
+            public double getCostInsurance() {
+                return costInsurance;
+            }
+
+            public LocalDate getInsuranceValidityPeriod() {
+                return insuranceValidityPeriod;
+            }
+
+            public String getItrnsuranceNumber() {
+                return itrnsuranceNumber;
+            }
+
+            public void insuranceCheck() {
+                if (insuranceValidityPeriod.isBefore(LocalDate.now()) || insuranceValidityPeriod.isEqual(LocalDate.now())) {
+                    System.out.println("Срочно! Сегодня необходимо оформить страховку!!!");
+
+                }
+            }
+
+            public void itrnsuranceNumberChek() {
+                if (itrnsuranceNumber.length() != 9) {
+                    System.out.println("Номер страховки не корректен!");
+                }
+            }
+        }
 }
 
 

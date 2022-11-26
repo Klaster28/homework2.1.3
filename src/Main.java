@@ -31,7 +31,12 @@ public class Main {
                 ". Год выпуска - " + car.getProductionYear() + ". Страна производства - " +
                 car.getProductionCountry() + ". Тип трансмиссии - " + car.getTransmission() +
                 ". Тип кузова - " + car.getBodyType() + ". Регистрационный номер - " + car.getRegistrationNumber() +
-                ". Количество мест - " + car.getNumberSeats() + ". Шины - " + car.getTireIndication() + ". ");
+                ". Количество мест - " + car.getNumberSeats() + ". Шины - " + car.getTireIndication() + ". " +
+                (car.getKey().isKeylessAccess() ? "Бесключевой доступ" : "Ключевой доступ") +
+                (car.getKey().isRemoteEngineStart() ? "Дистанционный запуск" : " Обычный запуск") +
+                " Действие страховки - " + car.getInsurance().getInsuranceValidityPeriod() +
+                " Стоимость страховки - " + car.getInsurance().getCostInsurance() + " руб. " +
+                " Номер страхового полиса - " + car.getInsurance().getItrnsuranceNumber());
     }
 
 
