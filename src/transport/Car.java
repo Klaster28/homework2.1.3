@@ -85,12 +85,12 @@ public class Car {
         }
         if (key == null) {
             this.key = new Key();
-        }else {
+        } else {
             this.key = key;
         }
         if (insurance == null) {
             this.insurance = new Insurance();
-        }else {
+        } else {
             this.insurance = insurance;
         }
     }
@@ -213,13 +213,13 @@ public class Car {
             return false;
         }
         if (Character.isDigit(chars[1]) && Character.isDigit(chars[2]) && Character.isDigit(chars[3]) && Character.isDigit(chars[6]) && Character.isDigit(chars[7])) {
-            Character.isDigit(chars[8]);
             return false;
         }
         return true;
     }
 
-    public class Key {
+
+    public static class Key {
         private final boolean remoteEngineStart;
         private final boolean keylessAccess;
 
@@ -228,6 +228,10 @@ public class Car {
             this.remoteEngineStart = remoteEngineStart;
 
         }
+        public Key() {
+            this(false, false);
+        }
+
 
 
         public boolean isKeylessAccess() {

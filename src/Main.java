@@ -7,11 +7,11 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
 
-        Car ladaGranta = new Car("Lada ", "Granta", 1.7, "Желтый", 2015, "Россия","Автоматическая", "Хетчбек", "п232пп23", "5", "Зимние");
-        Car audi = new Car("Audi ", "A8 50 L TDI quattro", 3.0, "Черный", 2020, "Германия","Механика","Седан","з111зз22","4","Летние");
-        Car bmw = new Car("BMW ", "Z8", 3.0, "Черный", 2021, "Германия","Автоматическая","Седан","з323зз98","4","Зимние");
-        Car kia = new Car("KIA ", "Sportage 4 ", 2.4, "Красный", 2018, "Южная Корея","Механическая","Универсал","л434лл43","5","Летние");
-        Car hundai = new Car("Hundai ", "Avante", 1.6, "Оранжевый", 2016, "Южная Корея","Механическая","Седан","п343пп55","5","Летние");
+        Car ladaGranta = new Car("Lada ", "Granta", 1.7, "Желтый", 2015, "Россия","Автоматическая", "Хетчбек", "п232пп23", "5", "Зимние",new Car.Key(), new Car.Insurance());
+        Car audi = new Car("Audi ", "A8 50 L TDI quattro", 3.0, "Черный", 2020, "Германия","Механика","Седан","з111зз22","4","Летние",new Car.Key(), new Car.Insurance());
+        Car bmw = new Car("BMW ", "Z8", 3.0, "Черный", 2021, "Германия","Автоматическая","Седан","з323зз98","4","Зимние",new Car.Key(), new Car.Insurance());
+        Car kia = new Car("KIA ", "Sportage 4 ", 2.4, "Красный", 2018, "Южная Корея","Механическая","Универсал","л434лл43","5","Летние",new Car.Key(), new Car.Insurance());
+        Car hundai = new Car("Hundai ", "Avante", 1.6, "Оранжевый", 2016, "Южная Корея","Механическая","Седан","п343пп55","5","Летние",new Car.Key(), new Car.Insurance());
 
         printInfo(ladaGranta);
         printInfo(audi);
