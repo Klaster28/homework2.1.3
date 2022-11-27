@@ -1,4 +1,5 @@
 import transport.Car;
+import transport.Train;
 import transport.Transport;
 
 import java.time.LocalDate;
@@ -13,12 +14,20 @@ public class Main {
         Car bmw = new Car("BMW ", "Z8", 3.0, "Черный", 2021, "Германия","Автоматическая","Седан",210, "з323зз98","4","Зимние",new Car.Key(), new Car.Insurance());
         Car kia = new Car("KIA ", "Sportage 4 ", 2.4, "Красный", 2018, "Южная Корея","Механическая","Универсал",199, "л434лл43","5","Летние",new Car.Key(), new Car.Insurance());
         Car hundai = new Car("Hundai ", "Avante", 1.6, "Оранжевый", 2016, "Южная Корея","Механическая","Седан",243, "п343пп55","5","Летние",new Car.Key(), new Car.Insurance());
+        System.out.println();
+        Train lastochka = new Train("Ласточка","B-901","Красный",2011,"Россия", 350, 3500, 3.5,"Москва", "Минск", 8);
+        Train leningrad = new Train("ленинград","Д-125","Красно-белый",2019,"Россия", 270, 1500, 4.5,"Москва", "Ленинград", 11);
+
 
         printInfo(ladaGranta);
         printInfo(audi);
         printInfo(bmw);
         printInfo(kia);
         printInfo(hundai);
+        System.out.println();
+        printInfo(lastochka);
+        printInfo(leningrad);
+        System.out.println();
         audi.changeTires();
         bmw.changeTires();
         kia.changeTires();
@@ -39,7 +48,15 @@ public class Main {
                 " Стоимость страховки - " + car.getInsurance().getCostInsurance() + " руб. " +
                 " Номер страхового полиса - " + car.getInsurance().getItrnsuranceNumber() + ". ");
     }
-
+    private static void printInfo(Train train) {
+        System.out.println("Поезд: " + train.getBrand() + " " + train.getModel() +
+                " Цвет кузова - " + train.getColor() +
+                ". Год выпуска - " + train.getProductionYear() + ". Страна производства - " +
+                train.getProductionCountry() +  " . Максимальная скорость - " + train.getMaxSpeed() +
+                " км/ч. Станция отправления - " +train.getNameDepartureStation()+ ". Станция назначения - "
+                +train.getFinalStopStation()+ ". Количество вагонов в поезде - " +train.getNumberWagons()+
+                "Время в пути - " +train.getTravelTime()+ "час. Стоимость поездки" +train.getCostTrip()+ " руб.");
+    }
 
 
 
