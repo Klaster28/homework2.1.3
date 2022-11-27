@@ -55,4 +55,9 @@ public class Train extends Transport {
     public void setNumberWagons(int numberWagons) {
         this.numberWagons = numberWagons;
     }
+
+    @Override
+    public void refill() {
+        System.out.println("Заправьте тепловоз дизельным топливом при его приемке в депо!!!");
+    }
 }

@@ -27,13 +27,16 @@ public class Main {
         printInfo(bmw);
         printInfo(kia);
         printInfo(hundai);
+        audi.refill();
         System.out.println();
         printInfo(lastochka);
         printInfo(leningrad);
+        lastochka.refill();
         System.out.println();
         printInfo(pazik);
         printInfo(gazel);
         printInfo(ural);
+        pazik.refill();
         System.out.println();
         audi.changeTires();
         bmw.changeTires();

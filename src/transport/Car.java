@@ -228,6 +228,11 @@ public class Car extends Transport {
                 }
             }
         }
+    public void refill(){
+        System.out.println("Заправьте автомобиль соответствующим топливом!!! - Дизель/Бензин/Электро.");
+
+
+}
 }
 
 
