@@ -102,6 +102,14 @@ public abstract class Transport {
 
     public abstract void  refill();
 
+    public void  startMovement(){
+        System.out.println("Начать движение!");
+    }
+
+    public  void  endMovement(){
+        System.out.println("Закончить движение!");
+    }
+
 
 }
 

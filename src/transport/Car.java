@@ -220,6 +220,18 @@ public class Car extends Transport {
                 }
             }
         }
+
+    @Override
+    public void endMovement() {
+        super.endMovement();
+    }
+
+   // @Override
+  //  public void startMovement(){
+//super.startMovement();
+   // }
+
+
     public void refill(){
         System.out.println("Заправьте автомобиль соответствующим топливом!!! - Дизель/Бензин/Электро.");
 
