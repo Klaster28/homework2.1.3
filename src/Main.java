@@ -1,7 +1,5 @@
-import transport.Car;
-import transport.Train;
-import transport.Transport;
-import transport.Bus;
+import transport.*;
+
 import java.time.LocalDate;
 
 
@@ -18,9 +16,15 @@ public class Main {
         Train lastochka = new Train("Ласточка","B-901","Красный",2011,"Россия", 350, 3500, 3.5,"Москва", "Минск", 8);
         Train leningrad = new Train("ленинград","Д-125","Красно-белый",2019,"Россия", 270, 1500, 4.5,"Москва", "Ленинград", 11);
 
-        Bus pazik = new Bus("Пазик", "4236","Белый", 2003, "Россия", 110);
-        Bus gazel = new Bus("Газель", "3123","Желтый", 2009, "Россия", 120);
-        Bus ural = new Bus("Урал", "456","Зеленый", 2019, "Россия", 95);
+        Bus pazik = new Bus("Пазик", "4236",5.0, "Белый", 2019, "Россия", 120);
+        Bus gazel = new Bus("Газель", "4236",3.0, "Желтый", 2012, "Россия", 130);
+        Bus ural = new Bus("Урал", "434",6.5, "Зеленый", 2002, "Россия", 115);
+
+        Trucks kamaz = new Trucks("Камаз", "6544", 6.0,"Синий", 2020, "Россия", 110);
+        Trucks maz = new Trucks("Маз", "687", 7.0,"Желтый", 2015, "Россия", 125);
+        Trucks zil = new Trucks("Зил", "130", 5.0,"Красный", 2022, "Россия", 90);
+
+
 
         printInfo(ladaGranta);
         printInfo(audi);

@@ -4,12 +4,15 @@ public abstract class Transport {
 
     private String brand;
     private String model;
+
+    private double engineVolume;
+
     private String color;
     private int productionYear;
     private String productionCountry;
-    private double maxSpeed = 0;
+    private double maxSpeed;
 
-    public Transport(String brand, String model, String color, int productionYear, String productionCountry, double maxSpeed) {
+    public Transport(String brand, String model,double engineVolume, String color, int productionYear, String productionCountry, double maxSpeed) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = "Рукожопство";
         } else {
@@ -19,6 +22,11 @@ public abstract class Transport {
             this.model = "Самоделка";
         } else {
             this.model = model;
+        }
+        if (engineVolume < 0) {
+            this.engineVolume = 1.5;
+        } else {
+            this.engineVolume = engineVolume;
         }
         if (color == null || color.isEmpty() || color.isBlank()) {
             this.color = "белый";
@@ -63,6 +71,14 @@ public abstract class Transport {
         this.model = model;
     }
 
+    public double getEngineVolume() {
+        return engineVolume;
+    }
+
+    public void setEngineVolume(double engineVolume) {
+        this.engineVolume = engineVolume;
+    }
+
     public String getColor() {
         return color;
     }
@@ -73,7 +89,7 @@ public abstract class Transport {
     }
 
     public String getProductionCountry() {
-        return productionCountry;
+        return null;
     }
 
     public double getMaxSpeed() {

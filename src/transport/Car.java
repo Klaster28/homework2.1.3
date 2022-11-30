@@ -3,7 +3,7 @@ package transport;
 import java.time.LocalDate;
 
 public class Car extends Transport {
-    private double engineVolume;
+    //private double engineVolume;
     private String transmission;
     private String bodyType;
     private String registrationNumber;
@@ -17,13 +17,9 @@ public class Car extends Transport {
                String color, int productionYear, String productionCountry,
                String transmission, String bodyType,double maxSpeed, String registrationNumber,
                String numberSeats, String tireIndication, Key key, Insurance insurance) {
-        super (brand, model, color,productionYear, productionCountry,maxSpeed);
+        super (brand, model,engineVolume, color,productionYear, productionCountry,maxSpeed);
 
-        if (engineVolume < 0) {
-            this.engineVolume = 1.5;
-        } else {
-            this.engineVolume = engineVolume;
-        }
+
 
         if (transmission == null || transmission.isEmpty() || transmission.isBlank()) {
             this.transmission = "Механическая";
@@ -62,9 +58,7 @@ public class Car extends Transport {
         }
     }
 
-    public double getEngineVolume() {
-        return engineVolume;
-    }
+
 
     public String getBodyType() {
         return bodyType;
@@ -86,9 +80,7 @@ public class Car extends Transport {
         this.bodyType = bodyType;
     }
 
-    public void setEngineVolume(double engineVolume) {
-        this.engineVolume = engineVolume;
-    }
+
 
     public void setNumberSeats(String numberSeats) {
         this.numberSeats = numberSeats;
