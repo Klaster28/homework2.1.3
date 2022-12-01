@@ -1,6 +1,6 @@
 package transport;
 
-public class Trucks extends Transport {
+public class Trucks extends Transport implements Competing  {
 
     public Trucks(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeed) {
         super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeed);
@@ -51,15 +51,8 @@ public class Trucks extends Transport {
         return super.getProductionCountry();
     }
 
-    @Override
-    public double getMaxSpeed() {
-        return super.getMaxSpeed();
-    }
 
-    @Override
-    public void setMaxSpeed(double maxSpeed) {
-        super.setMaxSpeed(maxSpeed);
-    }
+
 
     @Override
     public void startMovement() {
@@ -75,4 +68,22 @@ public class Trucks extends Transport {
     public void refill() {
 
     }
+
+
+    @Override
+    public void getPitStop() {
+
+    }
+
+    @Override
+    public void getBestLapTime() {
+
+    }
+
+    @Override
+    public void getMaxSpeedTransport() {
+
+    }
+
+
 }

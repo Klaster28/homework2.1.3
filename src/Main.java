@@ -21,7 +21,9 @@ public class Main {
         Trucks maz = new Trucks("Маз", "687", 7.0,"Желтый", 2015, "Россия", 125);
         Trucks zil = new Trucks("Зил", "130", 5.0,"Красный", 2022, "Россия", 90);
 
-
+        Driver ivan = new Driver("Иванов Иван", 12, "B","Lada ", "Granta", 1.7, "Синий", 2015, "Россия",150);
+        Driver petr = new Driver("Петров Петр", 15, "С","Камаз ", "6544", 7.0, "Желтый", 2011, "Россия",110);
+        Driver sidor = new Driver("Сидоров Сидор", 20, "D","Пазик ", "4236", 5.0, "Красный", 2010, "Россия",115);
 
         printInfo(ladaGranta);
         ladaGranta.startMovement();
@@ -45,12 +47,16 @@ public class Main {
         maz.endMovement();
         printInfo(zil);
         System.out.println();
-        audi.changeTires();
-        bmw.changeTires();
-        kia.changeTires();
-        hundai.changeTires();
-        ladaGranta.changeTires();
-        audi.isNormRegistrationNumber();
+        printInfo(ivan);
+        printInfo(petr);
+        printInfo(sidor);
+
+        //audi.changeTires();
+        //bmw.changeTires();
+       // kia.changeTires();
+        //hundai.changeTires();
+        //ladaGranta.changeTires();
+       // audi.isNormRegistrationNumber();
     }
 
 
@@ -73,7 +79,7 @@ public class Main {
         System.out.println("Поезд: " + train.getBrand() + " " + train.getModel() +
                 " Цвет кузова - " + train.getColor() +
                 ". Год выпуска - " + train.getProductionYear() + ". Страна производства - " +
-                train.getProductionCountry() +  " . Максимальная скорость - " + train.getMaxSpeed() +
+             //   train.getProductionCountry() +  " . Максимальная скорость - " + train.getMaxSpeed() +
                 " км/ч. Станция отправления - " +train.getNameDepartureStation()+ ". Станция назначения - "
                 +train.getFinalStopStation()+ ". Количество вагонов в поезде - " +train.getNumberWagons()+
                 "Время в пути - " +train.getTravelTime()+ "час. Стоимость поездки" +train.getCostTrip()+ " руб.");
@@ -96,6 +102,14 @@ public class Main {
              //   trucks.getProductionCountry() +  " . Максимальная скорость - " + trucks.getMaxSpeed() +
             //    " км/ч."
         );
+    }
+    private static void printInfo(Driver driver) {
+        System.out.println("Водитель - " +driver.getNameDriver() + ". Имеет опыт - " + driver.getExperienceDriver()+
+                " лет и права управления категории - "+ driver.getDriverLicence()+ ". Будет участвовать в заезде " +
+                "на автомобиле - " + driver.getBrand() + " " + driver.getModel() +
+                        ". Двигатель - " + driver.getEngineVolume() + " л. Цвет кузова - " + driver.getColor() +
+                 ". Год выпуска - " + driver.getProductionYear() + ". Страна производства - " +
+                  driver.getProductionCountry() + " . Максимальная скорость - " + driver.getMaxSpeed());
     }
 
 

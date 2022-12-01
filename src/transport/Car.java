@@ -2,8 +2,8 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Car extends Transport {
-    //private double engineVolume;
+public class Car  extends Transport implements Competing {
+
     private String transmission;
     private String bodyType;
     private String registrationNumber;
@@ -132,6 +132,23 @@ public class Car extends Transport {
         return true;
     }
 
+    @Override
+    public void getPitStop() {
+
+    }
+
+    @Override
+    public void getBestLapTime() {
+
+    }
+
+    @Override
+    public void getMaxSpeedTransport() {
+
+    }
+
+
+
 
     public static class Key {
         private final boolean remoteEngineStart;
@@ -226,10 +243,10 @@ public class Car extends Transport {
         super.endMovement();
     }
 
-   // @Override
-  //  public void startMovement(){
-//super.startMovement();
-   // }
+   @Override
+    public void startMovement(){
+    super.startMovement();
+    }
 
 
     public void refill(){
