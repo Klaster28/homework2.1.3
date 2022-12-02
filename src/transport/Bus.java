@@ -31,8 +31,9 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
-    public void getMaxSpeedTransport() {
+    public double getMaxSpeedTransport() {
 
+        return 0;
     }
 
 

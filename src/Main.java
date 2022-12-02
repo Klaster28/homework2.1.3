@@ -4,11 +4,11 @@ import transport.*;
 public class Main {
     public static void main(String[] args) {
 
-        Car ladaGranta = new Car("Lada ", "Granta", 1.7, "Желтый", 2015, "Россия","Автоматическая", "Хетчбек", 200,"п232пп23", "5", "Зимние",new Car.Key(), new Car.Insurance());
-        Car audi = new Car("Audi ", "A8 50 L TDI quattro", 3.0, "Черный", 2020, "Германия","Механика","Седан",168, "з111зз22","4","Летние",new Car.Key(), new Car.Insurance());
-        Car bmw = new Car("BMW ", "Z8", 3.0, "Черный", 2021, "Германия","Автоматическая","Седан",210, "з323зз98","4","Зимние",new Car.Key(), new Car.Insurance());
-        Car kia = new Car("KIA ", "Sportage 4 ", 2.4, "Красный", 2018, "Южная Корея","Механическая","Универсал",199, "л434лл43","5","Летние",new Car.Key(), new Car.Insurance());
-        Car hundai = new Car("Hundai ", "Avante", 1.6, "Оранжевый", 2016, "Южная Корея","Механическая","Седан",243, "п343пп55","5","Летние",new Car.Key(), new Car.Insurance());
+        Car ladaGranta = new Car("Lada ", "Granta", 1.7, "Желтый", 2015, "Россия", 200);
+        Car audi = new Car("Audi ", "A8 50 L TDI quattro", 3.0, "Черный", 2020, "Германия", 168);
+        Car bmw = new Car("BMW ", "Z8", 3.0, "Черный", 2021, "Германия", 210);
+        Car kia = new Car("KIA ", "Sportage 4 ", 2.4, "Красный", 2018, "Южная Корея", 199);
+        Car hundai = new Car("Hundai ", "Avante", 1.6, "Оранжевый", 2016, "Южная Корея", 243);
 
         Train lastochka = new Train("Ласточка","B-901",30.0,"Красный",2011,"Россия", 350, 3500, 3.5,"Москва", "Минск", 8);
         Train leningrad = new Train("ленинград","Д-125",40.0,"Красно-белый",2019,"Россия", 270, 1500, 4.5,"Москва", "Ленинград", 11);
@@ -21,9 +21,9 @@ public class Main {
         Trucks maz = new Trucks("Маз", "687", 7.0,"Желтый", 2015, "Россия", 125);
         Trucks zil = new Trucks("Зил", "130", 5.0,"Красный", 2022, "Россия", 90);
 
-        Driver ivan = new Driver("Иванов Иван", 12, "B","Lada ", "Granta", 1.7, "Синий", 2015, "Россия",150);
-        Driver petr = new Driver("Петров Петр", 15, "С","Камаз ", "6544", 7.0, "Желтый", 2011, "Россия",110);
-        Driver sidor = new Driver("Сидоров Сидор", 20, "D","Пазик ", "4236", 5.0, "Красный", 2010, "Россия",115);
+        DriverB ivan = new DriverB("Иванов Иван", 12, "B","Lada ", "Granta", 1.7, "Синий", 2015, "Россия",150);
+        DriverC petr = new DriverC("Петров Петр", 15, "C","Камаз ", "6544", 7.0, "Желтый", 2011, "Россия",110);
+        DriverD sidor = new DriverD("Сидоров Сидор", 20, "D","Пазик ", "4236", 5.0, "Красный", 2010, "Россия",115);
 
         printInfo(ladaGranta);
         ladaGranta.startMovement();
@@ -103,13 +103,29 @@ public class Main {
             //    " км/ч."
         );
     }
-    private static void printInfo(Driver driver) {
-        System.out.println("Водитель - " +driver.getNameDriver() + ". Имеет опыт - " + driver.getExperienceDriver()+
-                " лет и права управления категории - "+ driver.getDriverLicence()+ ". Будет участвовать в заезде " +
-                "на автомобиле - " + driver.getBrand() + " " + driver.getModel() +
-                        ". Двигатель - " + driver.getEngineVolume() + " л. Цвет кузова - " + driver.getColor() +
-                 ". Год выпуска - " + driver.getProductionYear() + ". Страна производства - " +
-                  driver.getProductionCountry() + " . Максимальная скорость - " + driver.getMaxSpeed());
+    private static void printInfo(DriverB driverB) {
+        System.out.println("Водитель - " + driverB.getNameDriver() + ". Имеет опыт - " + driverB.getExperienceDriver()+
+                " лет и права управления категории - "+ driverB.getDriverLicence()+ ". Будет участвовать в заезде " +
+                "на автомобиле - " + driverB.getBrand() + " " + driverB.getModel() +
+                        ". Двигатель - " + driverB.getEngineVolume() + " л. Цвет кузова - " + driverB.getColor() +
+                 ". Год выпуска - " + driverB.getProductionYear() + ". Страна производства - " +
+                  driverB.getProductionCountry() + " . Максимальная скорость - " + driverB.getMaxSpeedTransport());
+    }
+    private static void printInfo(DriverC driverC) {
+        System.out.println("Водитель - " + driverC.getNameDriver() + ". Имеет опыт - " + driverC.getExperienceDriver()+
+                " лет и права управления категории - "+ driverC.getDriverLicence()+ ". Будет участвовать в заезде " +
+                "на автомобиле - " + driverC.getBrand() + " " + driverC.getModel() +
+                ". Двигатель - " + driverC.getEngineVolume() + " л. Цвет кузова - " + driverC.getColor() +
+                ". Год выпуска - " + driverC.getProductionYear() + ". Страна производства - " +
+                driverC.getProductionCountry() + " . Максимальная скорость - " + driverC.getMaxSpeedTransport());
+    }
+    private static void printInfo(DriverD driverD) {
+        System.out.println("Водитель - " + driverD.getNameDriver() + ". Имеет опыт - " + driverD.getExperienceDriver()+
+                " лет и права управления категории - "+ driverD.getDriverLicence()+ ". Будет участвовать в заезде " +
+                "на автомобиле - " + driverD.getBrand() + " " + driverD.getModel() +
+                ". Двигатель - " + driverD.getEngineVolume() + " л. Цвет кузова - " + driverD.getColor() +
+                ". Год выпуска - " + driverD.getProductionYear() + ". Страна производства - " +
+                driverD.getProductionCountry() + " . Максимальная скорость - " + driverD.getMaxSpeedTransport());
     }
 
 

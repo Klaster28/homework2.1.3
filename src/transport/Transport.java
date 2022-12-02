@@ -10,9 +10,9 @@ public abstract class Transport {
     private String color;
     private int productionYear;
     private String productionCountry;
-    private double maxSpeed;
+    private double maxSpeedTransport;
 
-    public Transport(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeed) {
+    public Transport(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeedTransport) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = "Рукожопство";
         } else {
@@ -48,10 +48,10 @@ public abstract class Transport {
         } else {
             this.color = color;
         }
-        if (maxSpeed < 0) {
-            this.maxSpeed = 0;
+        if (maxSpeedTransport < 0) {
+            this.maxSpeedTransport = 0;
         } else {
-            this.maxSpeed = maxSpeed;
+            this.maxSpeedTransport = maxSpeedTransport;
         }
     }
 
@@ -92,8 +92,8 @@ public abstract class Transport {
         return productionCountry;
     }
 
-    public double getMaxSpeed() {
-        return maxSpeed;
+    public double getMaxSpeedTransport() {
+        return maxSpeedTransport;
     }
 
     public void setMaxSpeed(double maxSpeed) {

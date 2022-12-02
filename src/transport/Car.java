@@ -15,9 +15,8 @@ public class Car  extends Transport implements Competing {
 
     public Car(String brand, String model, double engineVolume,
                String color, int productionYear, String productionCountry,
-               String transmission, String bodyType,double maxSpeed, String registrationNumber,
-               String numberSeats, String tireIndication, Key key, Insurance insurance) {
-        super (brand, model,engineVolume, color,productionYear, productionCountry,maxSpeed);
+               double maxSpeedTransport) {
+        super (brand, model,engineVolume, color,productionYear, productionCountry,maxSpeedTransport);
 
 
 
@@ -57,6 +56,7 @@ public class Car  extends Transport implements Competing {
             this.insurance = insurance;
         }
     }
+
 
 
 
@@ -143,12 +143,14 @@ public class Car  extends Transport implements Competing {
     }
 
     @Override
-    public void getMaxSpeedTransport() {
-
+    public double getMaxSpeedTransport() {
+        return super.getMaxSpeedTransport();
     }
 
-
-
+    @Override
+    public void setMaxSpeed(double maxSpeed) {
+        super.setMaxSpeed(maxSpeed);
+    }
 
     public static class Key {
         private final boolean remoteEngineStart;

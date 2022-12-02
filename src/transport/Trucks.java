@@ -81,9 +81,18 @@ public class Trucks extends Transport implements Competing  {
     }
 
     @Override
-    public void getMaxSpeedTransport() {
-
+    public double getMaxSpeedTransport() {
+        return super.getMaxSpeedTransport();
     }
 
+    @Override
+    public void setMaxSpeed(double maxSpeed) {
+        super.setMaxSpeed(maxSpeed);
+    }
+
+    @Override
+    public String toString() {
+        return "Trucks{}";
+    }
 
 }
