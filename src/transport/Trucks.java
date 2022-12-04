@@ -1,8 +1,9 @@
 package transport;
 
 public class Trucks extends Transport implements Competing  {
+    private WeightTruck weightTruck;
 
-    public Trucks(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeed) {
+    public Trucks(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeed,WeightTruck weightTruck) {
         super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeed);
     }
 
@@ -51,8 +52,13 @@ public class Trucks extends Transport implements Competing  {
         return super.getProductionCountry();
     }
 
+    public WeightTruck getWeightTruck() {
+        return weightTruck;
+    }
 
-
+    public void setWeightTruck(WeightTruck weightTruck) {
+        this.weightTruck = weightTruck;
+    }
 
     @Override
     public void startMovement() {

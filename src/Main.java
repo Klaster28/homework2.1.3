@@ -4,22 +4,22 @@ import transport.*;
 public class Main {
     public static void main(String[] args) {
 
-        Car ladaGranta = new Car("Lada ", "Granta", 1.7, "Желтый", 2015, "Россия", 200);
-        Car audi = new Car("Audi ", "A8 50 L TDI quattro", 3.0, "Черный", 2020, "Германия", 168);
-        Car bmw = new Car("BMW ", "Z8", 3.0, "Черный", 2021, "Германия", 210);
-        Car kia = new Car("KIA ", "Sportage 4 ", 2.4, "Красный", 2018, "Южная Корея", 199);
-        Car hundai = new Car("Hundai ", "Avante", 1.6, "Оранжевый", 2016, "Южная Корея", 243);
+        Car ladaGranta = new Car("Lada ", "Granta", 1.7, "Желтый", 2015, "Россия", 200, BodyOfType.SEDAN);
+        Car audi = new Car("Audi ", "A8 50 L TDI quattro", 3.0, "Черный", 2020, "Германия", 168,BodyOfType.UNIVERSAL);
+        Car bmw = new Car("BMW ", "Z8", 3.0, "Черный", 2021, "Германия", 210,BodyOfType.COUPE);
+        Car kia = new Car("KIA ", "Sportage 4 ", 2.4, "Красный", 2018, "Южная Корея", 199,BodyOfType.CROSSOVER);
+        Car hundai = new Car("Hundai ", "Avante", 1.6, "Оранжевый", 2016, "Южная Корея", 243,BodyOfType.SEDAN);
 
         Train lastochka = new Train("Ласточка","B-901",30.0,"Красный",2011,"Россия", 350, 3500, 3.5,"Москва", "Минск", 8);
         Train leningrad = new Train("ленинград","Д-125",40.0,"Красно-белый",2019,"Россия", 270, 1500, 4.5,"Москва", "Ленинград", 11);
 
-        Bus pazik = new Bus("Пазик", "4236",5.0, "Белый", 2019, "Россия", 120);
-        Bus gazel = new Bus("Газель", "4236",3.0, "Желтый", 2012, "Россия", 130);
-        Bus ural = new Bus("Урал", "434",6.5, "Зеленый", 2002, "Россия", 115);
+        Bus pazik = new Bus("Пазик", "4236",5.0, "Белый", 2019, "Россия", 120,CapacityBus.MEDIUM);
+        Bus gazel = new Bus("Газель", "4236",3.0, "Желтый", 2012, "Россия", 130,CapacityBus.SMALL);
+        Bus ural = new Bus("Урал", "434",6.5, "Зеленый", 2002, "Россия", 115,CapacityBus.LARGE);
 
-        Trucks kamaz = new Trucks("Камаз", "6544", 6.0,"Синий", 2020, "Россия", 110);
-        Trucks maz = new Trucks("Маз", "687", 7.0,"Желтый", 2015, "Россия", 125);
-        Trucks zil = new Trucks("Зил", "130", 5.0,"Красный", 2022, "Россия", 90);
+        Trucks kamaz = new Trucks("Камаз", "6544", 6.0,"Синий", 2020, "Россия", 110,WeightTruck.N2);
+        Trucks maz = new Trucks("Маз", "687", 7.0,"Желтый", 2015, "Россия", 125,WeightTruck.N2);
+        Trucks zil = new Trucks("Зил", "130", 5.0,"Красный", 2022, "Россия", 90,WeightTruck.N3);
 
         DriverB ivan = new DriverB("Иванов Иван", 12, "B","Lada ", "Granta", 1.7, "Синий", 2015, "Россия",150);
         DriverC petr = new DriverC("Петров Петр", 15, "C","Камаз ", "6544", 7.0, "Желтый", 2011, "Россия",110);

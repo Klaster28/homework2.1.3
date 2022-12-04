@@ -2,7 +2,9 @@ package transport;
 
 
 public class Bus extends Transport implements Competing {
-    public Bus(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeed) {
+
+    private CapacityBus capacityBus;
+    public Bus(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeed,CapacityBus capacityBus) {
         super(brand, model,engineVolume, color, productionYear, productionCountry, maxSpeed);
     }
 

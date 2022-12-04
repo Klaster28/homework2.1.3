@@ -1,6 +1,6 @@
 package transport;
 
-public enum BodyType {
+public enum BodyOfType {
     SEDAN,
     HATCHBACK,
     COUPE,
