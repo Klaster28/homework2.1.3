@@ -57,6 +57,11 @@ public class Train extends Transport {
     }
 
     @Override
+    public void printType() {
+
+    }
+
+    @Override
     public void refill() {
         System.out.println("Заправьте тепловоз дизельным топливом при его приемке в депо!!!");
     }

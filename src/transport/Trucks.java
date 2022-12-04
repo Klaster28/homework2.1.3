@@ -3,8 +3,8 @@ package transport;
 public class Trucks extends Transport implements Competing  {
     private WeightTruck weightTruck;
 
-    public Trucks(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeed,WeightTruck weightTruck) {
-        super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeed);
+    public Trucks(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeedTransport, WeightTruck weightTruck) {
+        super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport);
     }
 
     @Override
@@ -58,6 +58,14 @@ public class Trucks extends Transport implements Competing  {
 
     public void setWeightTruck(WeightTruck weightTruck) {
         this.weightTruck = weightTruck;
+    }
+
+    public void printType(){
+        if (weightTruck == null){
+            System.out.println("Данных по грузовику не достаточно!");
+        }else {
+            System.out.println("Грузоподъемность грузовика от - " + weightTruck.getFrom()+ " т. до " +weightTruck.getTo() +" т.");
+        }
     }
 
     @Override

@@ -6,7 +6,7 @@ public class Car  extends Transport implements Competing {
 
     private BodyOfType bodyOfType;
     private String transmission;
-    //private String bodyType;
+
     private String registrationNumber;
     private String numberSeats;
     private String tireIndication;
@@ -18,21 +18,17 @@ public class Car  extends Transport implements Competing {
 
     public Car(String brand, String model, double engineVolume,
                String color, int productionYear, String productionCountry,
-               double maxSpeedTransport, BodyOfType bodyOfType) {
+               double maxSpeedTransport,BodyOfType bodyOfType) {
         super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport);
 
 
-        this.bodyOfType = bodyOfType;
+      //  this.bodyOfType = bodyOfType;
         if (transmission == null || transmission.isEmpty() || transmission.isBlank()) {
             this.transmission = "Механическая";
         } else {
             this.transmission = transmission;
         }
-        //  if (bodyType == null || bodyType.isEmpty() || bodyType.isBlank()) {
-        //     this.bodyType = "Седан";
-        //  } else {
-        //     this.bodyType = bodyType;
-        // }
+
         if (registrationNumber == null || registrationNumber.isEmpty() || registrationNumber.isBlank()) {
             this.registrationNumber = "ф000фф00";
         } else {
@@ -61,13 +57,6 @@ public class Car  extends Transport implements Competing {
     }
 
 
-
-
-
-  //  public String getBodyType() {
-   //     return bodyType;
-  //  }
-
     public String getNumberSeats() {
         return numberSeats;
     }
@@ -80,15 +69,12 @@ public class Car  extends Transport implements Competing {
         return transmission;
     }
 
-  //  public void setBodyType(String bodyType) {
-   //     this.bodyType = bodyType;
-   // }
 
-public BodyOfType getBodyOfType() {
+    public BodyOfType getBodyOfType() {
         return bodyOfType;
         }
 
-public void setBodyOfType(BodyOfType bodyOfType) {
+    public void setBodyOfType(BodyOfType bodyOfType) {
         this.bodyOfType = bodyOfType;
         }
 
@@ -141,6 +127,16 @@ public void setBodyOfType(BodyOfType bodyOfType) {
         }
         return true;
     }
+
+    @Override
+    public  void printType() {
+        if (bodyOfType == null) {
+            System.out.println("Недостаточно данных по авто!");
+        } else {
+            System.out.println("Тип авто - " + bodyOfType);
+        }
+    }
+
 
     @Override
     public void getPitStop() {

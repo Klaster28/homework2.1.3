@@ -2,13 +2,13 @@ package transport;
 
 import java.util.Objects;
 
-public class DriverB extends Car implements Competing  {
+public class DriverB /*extends Car implements Competing */ {
     private String nameDriver;
     private String driverLicence;
     private int experienceDriver;
 
     public DriverB(String nameDriver, int experienceDriver, String driverLicence, String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeedTransport) {
-        super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport);
+     //   super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport);
         this.driverLicence = driverLicence;
         this.nameDriver = nameDriver;
         this.experienceDriver = experienceDriver;
@@ -30,7 +30,7 @@ public class DriverB extends Car implements Competing  {
         return experienceDriver;
     }
 
-    @Override
+   // @Override
     public void refill() {
 
     }

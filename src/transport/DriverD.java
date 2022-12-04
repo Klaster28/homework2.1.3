@@ -1,12 +1,12 @@
 package transport;
 
-public class DriverD extends Bus implements Competing{
+public class DriverD /*extends Bus implements Competing*/{
     private String nameDriver;
     private String driverLicence;
     private int experienceDriver;
 
-    public DriverD(String nameDriver, int experienceDriver, String driverLicence, String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeedTransport) {
-        super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport);
+    public DriverD(String nameDriver, int experienceDriver, String driverLicence, String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeedTransport, CapacityBus capacityBus) {
+    //    super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport,CapacityBus capacityBus);
         this.driverLicence = driverLicence;
         this.nameDriver = nameDriver;
         this.experienceDriver = experienceDriver;
@@ -28,7 +28,7 @@ public class DriverD extends Bus implements Competing{
         return experienceDriver;
     }
 
-    @Override
+   // @Override
     public void refill() {
 
     }

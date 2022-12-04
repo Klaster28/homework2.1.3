@@ -1,13 +1,13 @@
 package transport;
 
-public class DriverC extends Trucks {
+public class DriverC /*extends Trucks */{
 
     private String nameDriver;
     private String driverLicence;
     private int experienceDriver;
 
-    public DriverC(String nameDriver, int experienceDriver, String driverLicence, String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeedTransport) {
-        super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport);
+    public DriverC(String nameDriver, int experienceDriver, String driverLicence, String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeedTransport, WeightTruck weightTruck) {
+   //     super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport, WeightTruck weightTruck);
         this.driverLicence = driverLicence;
         this.nameDriver = nameDriver;
         this.experienceDriver = experienceDriver;
@@ -29,10 +29,10 @@ public class DriverC extends Trucks {
         return experienceDriver;
     }
 
-    @Override
-    public void refill() {
+  //  @Override
+  //  public void refill() {
 
-    }
+//    }
     public void startMovement(){
 
     }

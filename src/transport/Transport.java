@@ -12,7 +12,9 @@ public abstract class Transport {
     private String productionCountry;
     private double maxSpeedTransport;
 
-    public Transport(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeedTransport) {
+    public Transport(String brand, String model, double engineVolume, String color, int productionYear,
+                     String productionCountry, double maxSpeedTransport) {
+
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = "Рукожопство";
         } else {
@@ -99,6 +101,11 @@ public abstract class Transport {
     public void setMaxSpeed(double maxSpeed) {
 
     }
+
+    public abstract void printType();
+
+
+
 
     public abstract void  refill();
 
