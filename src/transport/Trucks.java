@@ -5,6 +5,8 @@ public class Trucks extends Transport implements Competing  {
 
     public Trucks(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeedTransport, WeightTruck weightTruck) {
         super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport);
+
+    this.weightTruck = weightTruck;
     }
 
     @Override

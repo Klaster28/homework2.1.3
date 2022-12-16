@@ -7,9 +7,10 @@ public class Bus extends Transport implements Competing {
 
     private CapacityBus capacityBus;
     public Bus(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeedTransport, CapacityBus capacityBus) {
-        super(brand, model,engineVolume, color, productionYear, productionCountry, maxSpeedTransport);
-    }
+        super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport);
 
+        this.capacityBus = capacityBus;
+    }
     public void printType(){
         if (capacityBus == null){
             System.out.println("Данных по автобусу не достаточно!");
@@ -49,7 +50,7 @@ public class Bus extends Transport implements Competing {
     @Override
     public double getMaxSpeedTransport() {
 
-        return 0;
+        return super.getMaxSpeedTransport();
     }
 
     @Override

@@ -34,15 +34,23 @@ public class Main {
 
        System.out.println();
         printInfo(gazel);
+        gazel.printType();
         printInfo(ural);
+        ural.printType();
         printInfo(pazik);
+        pazik.printType();
         printInfo(ikarus);
+        ikarus.printType();
 
         System.out.println();
         printInfo(kamaz);
+        kamaz.printType();
         printInfo(maz);
+        maz.printType();
         printInfo(zil);
+        zil.printType();
         printInfo(gaz);
+        gaz.printType();
 
         System.out.println();
      //   printInfo(ivan);
@@ -60,7 +68,8 @@ public class Main {
         System.out.println("Автомобиль: " + car.getBrand() + " " + car.getModel() +
                 ". Двигатель - " + car.getEngineVolume() + " л. Цвет кузова - " + car.getColor() +
                 ". Год выпуска - " + car.getProductionYear() + ". Страна производства - " +
-                car.getProductionCountry()  + "Максимальная скорость - " + car.getMaxSpeed());
+                car.getProductionCountry()  + ". Максимальная скорость - " + car.getMaxSpeedTransport() + " км/ч. " +
+                "Тип кузова автомобиля - " + car.getBodyOfType() + ".");
     }
 
 
@@ -68,16 +77,15 @@ public class Main {
         System.out.println("Автобус: " + bus.getBrand() + " " + bus.getModel() +
                 ". Двигатель - " + bus.getEngineVolume()+
                 " Цвет кузова - " + bus.getColor() +
-                ". Год выпуска - " + bus.getProductionYear() + ". Страна производства - " +
-                bus.getProductionCountry() + Максимальная скорость - " + bus.getMaxSpeed()
-                " км/ч."*/ + ". Пассажировместимость автобуса - " + bus.getCapacityBus() + " человек.");
+                ". Год выпуска - " + bus.getProductionYear() + ". Страна производства - " + bus.getProductionCountry() +
+                ". Максимальная скорость - " +  bus.getMaxSpeedTransport() +" км/ч. Пассажировместимость автобуса - "
+                + bus.getCapacityBus());
     }
     private static void printInfo(Trucks trucks) {
         System.out.println("Грузовик: " + trucks.getBrand() + " " + trucks.getModel() +". Двигатель - " + trucks.getEngineVolume()
-                +" Цвет кузова - " + trucks.getColor() +
-
-                ". Год выпуска - " + trucks.getProductionYear() + ". Страна производства - " +
-                trucks.getProductionCountry() + "Максимальная скорость - " + trucks.getMaxSpeed() + "Грузоподъемность автомобиля - " + trucks.getWeightTruck() + " тонн.");
+                +" Цвет кузова - " + trucks.getColor() + ". Год выпуска - " + trucks.getProductionYear() + ". Страна производства - " +
+                trucks.getProductionCountry() + " . Максимальная скорость - " + trucks.getMaxSpeedTransport() + " км/ч. Грузоподъемность автомобиля - "
+                + trucks.getWeightTruck());
     }
    /*     private static void printInfo(DriverB driverB) {
         System.out.println("Водитель - " + driverB.getNameDriver() + ". Имеет опыт - " + driverB.getExperienceDriver()+

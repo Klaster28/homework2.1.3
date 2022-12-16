@@ -22,7 +22,8 @@ public class Car  extends Transport implements Competing {
         super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport);
 
 
-      //  this.bodyOfType = bodyOfType;
+        this.bodyOfType = bodyOfType;
+
         if (transmission == null || transmission.isEmpty() || transmission.isBlank()) {
             this.transmission = "Механическая";
         } else {
