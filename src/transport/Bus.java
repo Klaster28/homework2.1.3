@@ -33,6 +33,12 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
+    public boolean service() {
+        System.out.println("Автобус" + getBrand()+ " " +getModel() +" в диагоностике не нуждается");
+        return true;
+    }
+
+    @Override
     public void refill() {
         System.out.println("Заправьте автобус топливом на заправке!!! - Бензин/Дизель");
     }
@@ -51,6 +57,7 @@ public class Bus extends Transport implements Competing {
     public double getMaxSpeedTransport() {
 
         return super.getMaxSpeedTransport();
+
     }
 
     @Override

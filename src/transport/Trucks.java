@@ -71,6 +71,11 @@ public class Trucks extends Transport implements Competing  {
     }
 
     @Override
+    public boolean service() {
+        return Math.random()>0.75;
+    }
+
+    @Override
     public void startMovement() {
     super.startMovement();
     }
