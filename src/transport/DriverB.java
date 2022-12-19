@@ -2,13 +2,14 @@ package transport;
 
 import java.util.Objects;
 
-public class DriverB /*extends Car implements Competing */ {
+public class DriverB   {
     private String nameDriver;
     private String driverLicence;
     private int experienceDriver;
 
-    public DriverB(String nameDriver, int experienceDriver, String driverLicence, String brand, String model, double engineVolume, String color, int productionYear, String productionCountry, double maxSpeedTransport) {
-     //   super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport);
+    public DriverB(String nameDriver, int experienceDriver, String driverLicence, String brand) {
+       // super(brand);
+
         this.driverLicence = driverLicence;
         this.nameDriver = nameDriver;
         this.experienceDriver = experienceDriver;
