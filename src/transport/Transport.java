@@ -1,5 +1,9 @@
 package transport;
 
+import transport.driver.Driver;
+
+import java.util.ArrayList;
+
 public abstract class Transport {
 
     private String brand;
@@ -11,6 +15,11 @@ public abstract class Transport {
     private int productionYear;
     private String productionCountry;
     private double maxSpeedTransport;
+
+    private final List<Driver<?>> drivers = new ArrayList<>();
+    private final List<Mechanic<?>> mechaics = new ArrayList<>();
+    private final List<Sponsor<?>> sponsors = new ArrayList<>();
+
 
     public Transport(String brand, String model, double engineVolume, String color, int productionYear,
                      String productionCountry, double maxSpeedTransport) {
@@ -55,6 +64,7 @@ public abstract class Transport {
         } else {
             this.maxSpeedTransport = maxSpeedTransport;
         }
+        drivers = new ArrayList<>();
     }
 
     public String getBrand() {
@@ -107,6 +117,9 @@ public abstract class Transport {
     public  boolean service(){
         return false;
     }
+   // public void addDriver(Driver<?> driver){
+  //      drivers.add(driver);
+  //  }
 
 
 
@@ -120,6 +133,9 @@ public abstract class Transport {
     public  void  endMovement(){
         System.out.println("Закончить движение!");
     }
+
+
+    public abstract void repair();
 
 
 }

@@ -112,6 +112,11 @@ public class Trucks extends Transport implements Competing  {
     }
 
     @Override
+    public void repair() {
+        System.out.println("Автомобиль " + getBrand()+ " " + getModel() + " отремонтирован!");
+    }
+
+    @Override
     public String toString() {
         return "Trucks{}";
     }

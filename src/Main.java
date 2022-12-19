@@ -1,4 +1,7 @@
 import transport.*;
+import transport.driver.DriverB;
+import transport.driver.DriverC;
+import transport.driver.DriverD;
 
 
 public class Main {
@@ -22,9 +25,9 @@ public class Main {
         Trucks zil = new Trucks("Зил", "130", 5.0,"Красный", 2022, "Россия", 90, WeightTruck.N3);
         Trucks gaz = new Trucks("Газ", "53", 3.0,"Зеленый", 2000, "Россия", 90, WeightTruck.N3);
 
-     //   DriverB ivan = new DriverB("Иванов Иван", 12, "B","Lada ", "Granta", 1.7, "Синий", 2015, "Россия",150);
-     //   DriverC petr = new DriverC("Петров Петр", 15, "C","Камаз ", "6544", 7.0, "Желтый", 2011, "Россия",110);
-     //   DriverD sidor = new DriverD("Сидоров Сидор", 20, "D","Пазик ", "4236", 5.0, "Красный", 2010, "Россия",115);
+       // DriverB ivan = new DriverB("Lada", "Granta", 1.7,"Желтый ", 2015, "Россия", 150, "Иванов Иван", "B",3);
+       // DriverC petr = new DriverC("Петров Петр", 15, "C","Камаз ", "6544", 7.0, "Желтый", 2011, "Россия",110);
+       // DriverD sidor = new DriverD("Сидоров Сидор", 20, "D","Пазик ", "4236", 5.0, "Красный", 2010, "Россия",115);
 
         printInfo(ladaGranta);
         printInfo(audi);
@@ -87,14 +90,13 @@ public class Main {
                 trucks.getProductionCountry() + " . Максимальная скорость - " + trucks.getMaxSpeedTransport() + " км/ч. Грузоподъемность автомобиля - "
                 + trucks.getWeightTruck());
     }
-   /*     private static void printInfo(DriverB driverB) {
+       private static void printInfo(DriverB driverB) {
         System.out.println("Водитель - " + driverB.getNameDriver() + ". Имеет опыт - " + driverB.getExperienceDriver()+
                 " лет и права управления категории - "+ driverB.getDriverLicence()+ ". Будет участвовать в заезде " +
                 "на автомобиле - " + driverB.getBrand() + " " + driverB.getModel() +
                         ". Двигатель - " + driverB.getEngineVolume() + " л. Цвет кузова - " + driverB.getColor() +
                  ". Год выпуска - " + driverB.getProductionYear() + ". Страна производства - " +
-                  driverB.getProductionCountry() + " . Максимальная скорость - " + driverB.getMaxSpeedTransport() +
-                driverB.getBodyOfType());
+                  driverB.getProductionCountry() + " . Максимальная скорость - " + driverB.getMaxSpeedTransport());
 
     }
     private static void printInfo(DriverC driverC) {
@@ -103,7 +105,7 @@ public class Main {
                 "на автомобиле - " + driverC.getBrand() + " " + driverC.getModel() +
                 ". Двигатель - " + driverC.getEngineVolume() + " л. Цвет кузова - " + driverC.getColor() +
                 ". Год выпуска - " + driverC.getProductionYear() + ". Страна производства - " +
-                driverC.getProductionCountry() + " . Максимальная скорость - " + driverC.getMaxSpeedTransport() + driverC.getWeightTruck());
+                driverC.getProductionCountry() + " . Максимальная скорость - " + driverC.getMaxSpeedTransport());
 
     }
     private static void printInfo(DriverD driverD) {
@@ -115,6 +117,6 @@ public class Main {
                 driverD.getProductionCountry() + " . Максимальная скорость - " + driverD.getMaxSpeedTransport());
 
     }
-*/
+
 
 }

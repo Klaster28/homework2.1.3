@@ -262,6 +262,11 @@ public class Car  extends Transport implements Competing {
     }
 
 
+    @Override
+    public void repair() {
+        System.out.println("Автомобиль " + getBrand()+ " " + getModel() + " отремонтирован!");
+    }
+
     public void refill(){
         System.out.println("Заправьте автомобиль соответствующим топливом!!! - Дизель/Бензин/Электро.");
 
