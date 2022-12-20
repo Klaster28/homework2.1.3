@@ -1,6 +1,6 @@
 package transport;
 
-public class Sponsor {
+public class Sponsor <T extends Transport> {
     private final String name;
     private final int amount;
 

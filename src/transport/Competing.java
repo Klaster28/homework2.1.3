@@ -8,4 +8,6 @@ public interface Competing {
     void getBestLapTime();
     double getMaxSpeedTransport();
 
+
+
 }

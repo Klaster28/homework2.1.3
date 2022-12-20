@@ -1,13 +1,35 @@
 import transport.*;
+import transport.Mechanic;
+import transport.Sponsor;
+import transport.Competing;
+import transport.driver.Driver;
 import transport.driver.DriverB;
 import transport.driver.DriverC;
 import transport.driver.DriverD;
 
+import java.util.List;
+
 
 public class Main {
     public static void main(String[] args) {
+        Mechanic<Car> pavel= new Mechanic<>("Павел","Павлов","Фара");
+        Mechanic<Trucks> oleg= new Mechanic<>("Олег","Олегов","Бампер");
+        Mechanic<Bus> ivan= new Mechanic<>("Иван","Иванов","Колесо");
+        Mechanic<Car> petr= new Mechanic<>("Петр","Петров","Шина");
+        Sponsor<Car> romachka = new Sponsor("Ромашка", 100000);
+        Sponsor<Car> landich = new Sponsor("Ландыш", 200000);
+        Sponsor<Car> klever = new Sponsor("Клевер", 300000);
+        Sponsor<Car> roza = new Sponsor("Роза", 400000);
+
 
         Car ladaGranta = new Car("Lada ", "Granta", 1.7, "Желтый", 2015, "Россия", 200, BodyOfType.SEDAN);
+        Car.addDriver(new DriverB("Рома", "В", 10));
+        Car.addMechanic(petr);
+        Car.addMechanic(pavel);
+        Car.addSponsor(landich);
+        Car.addSponsor(romachka);
+
+
         Car audi = new Car("Audi ", "A8 50 L TDI quattro", 3.0, "Черный", 2020, "Германия", 168, BodyOfType.UNIVERSAL);
         Car bmw = new Car("BMW ", "Z8", 3.0, "Черный", 2021, "Германия", 210, BodyOfType.SUV);
         Car kia = new Car("KIA ", "Sportage 4 ", 2.4, "Красный", 2018, "Южная Корея", 199, BodyOfType.COUPE);
@@ -16,18 +38,31 @@ public class Main {
 
 
         Bus pazik = new Bus("Пазик", "4236",5.0, "Белый", 2019, "Россия", 120,CapacityBus.MEDIUM);
+        Bus.addDriver(new DriverD("Семен", "D",11));
+        Bus.addMechanic(ivan);
+        Bus.addSponsor(roza);
+
+
+
         Bus gazel = new Bus("Газель", "4236",3.0, "Желтый", 2012, "Россия", 130,CapacityBus.SMALL);
         Bus ural = new Bus("Урал", "434",6.5, "Зеленый", 2002, "Россия", 115,CapacityBus.LARGE);
         Bus ikarus = new Bus("Икарус", "535",5.5, "Синий", 2005, "Болгария", 125,CapacityBus.LARGE);
 
         Trucks kamaz = new Trucks("Камаз", "6544", 6.0,"Синий", 2020, "Россия", 110, WeightTruck.N1);
+        Trucks.addDriver(new DriverC("Вася","C", 12));
+        Trucks.addMechanic(oleg);
+        Trucks.addSponsor(landich);
+        Trucks.addSponsor(klever);
+
+
         Trucks maz = new Trucks("Маз", "687", 7.0,"Желтый", 2015, "Россия", 125, WeightTruck.N2);
         Trucks zil = new Trucks("Зил", "130", 5.0,"Красный", 2022, "Россия", 90, WeightTruck.N3);
         Trucks gaz = new Trucks("Газ", "53", 3.0,"Зеленый", 2000, "Россия", 90, WeightTruck.N3);
 
-       // DriverB ivan = new DriverB("Lada", "Granta", 1.7,"Желтый ", 2015, "Россия", 150, "Иванов Иван", "B",3);
-       // DriverC petr = new DriverC("Петров Петр", 15, "C","Камаз ", "6544", 7.0, "Желтый", 2011, "Россия",110);
-       // DriverD sidor = new DriverD("Сидоров Сидор", 20, "D","Пазик ", "4236", 5.0, "Красный", 2010, "Россия",115);
+        DriverD semen = new DriverD("Семен", "D",11);
+        DriverC vasi = new DriverC("Вася","C", 12);
+        DriverB roma = new DriverB("Рома", "В", 10);
+
 
         printInfo(ladaGranta);
         printInfo(audi);
@@ -56,14 +91,20 @@ public class Main {
         gaz.printType();
 
         System.out.println();
-     //   printInfo(ivan);
-     //   printInfo(petr);
-     //   printInfo(sidor);
+        printInfo(semen);
+        printInfo(roma);
+        printInfo(vasi);
 
-
+        List <Transport> transport = List.of();
 
     }
-
+private static void printInfo(Transport transport){
+    System.out.println("Информация по автомобилю " + transport.getBrand() + transport.getModel());
+    System.out.println("Водители" + transport.get);
+    if(Driver<?> driver : transport.getDriver()) {
+        System.out.println(driver.getName);
+    }
+}
 
 
 
@@ -92,29 +133,17 @@ public class Main {
     }
        private static void printInfo(DriverB driverB) {
         System.out.println("Водитель - " + driverB.getNameDriver() + ". Имеет опыт - " + driverB.getExperienceDriver()+
-                " лет и права управления категории - "+ driverB.getDriverLicence()+ ". Будет участвовать в заезде " +
-                "на автомобиле - " + driverB.getBrand() + " " + driverB.getModel() +
-                        ". Двигатель - " + driverB.getEngineVolume() + " л. Цвет кузова - " + driverB.getColor() +
-                 ". Год выпуска - " + driverB.getProductionYear() + ". Страна производства - " +
-                  driverB.getProductionCountry() + " . Максимальная скорость - " + driverB.getMaxSpeedTransport());
+                " лет и права управления категории - "+ driverB.getDriverLicence());
 
     }
     private static void printInfo(DriverC driverC) {
         System.out.println("Водитель - " + driverC.getNameDriver() + ". Имеет опыт - " + driverC.getExperienceDriver()+
-                " лет и права управления категории - "+ driverC.getDriverLicence()+ ". Будет участвовать в заезде " +
-                "на автомобиле - " + driverC.getBrand() + " " + driverC.getModel() +
-                ". Двигатель - " + driverC.getEngineVolume() + " л. Цвет кузова - " + driverC.getColor() +
-                ". Год выпуска - " + driverC.getProductionYear() + ". Страна производства - " +
-                driverC.getProductionCountry() + " . Максимальная скорость - " + driverC.getMaxSpeedTransport());
+                " лет и права управления категории - "+ driverC.getDriverLicence());
 
     }
     private static void printInfo(DriverD driverD) {
         System.out.println("Водитель - " + driverD.getNameDriver() + ". Имеет опыт - " + driverD.getExperienceDriver()+
-                " лет и права управления категории - "+ driverD.getDriverLicence()+ ". Будет участвовать в заезде " +
-                "на автомобиле - " + driverD.getBrand() + " " + driverD.getModel() +
-                ". Двигатель - " + driverD.getEngineVolume() + " л. Цвет кузова - " + driverD.getColor() +
-                ". Год выпуска - " + driverD.getProductionYear() + ". Страна производства - " +
-                driverD.getProductionCountry() + " . Максимальная скорость - " + driverD.getMaxSpeedTransport());
+                " лет и права управления категории - "+ driverD.getDriverLicence());
 
     }
 

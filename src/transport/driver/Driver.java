@@ -4,14 +4,13 @@ import transport.Transport;
 
 import java.util.Objects;
 
-public class Driver extends Transport {
+public class Driver <T extends Transport>  {
     private String nameDriver;
     private String driverLicence;
     private int experienceDriver;
 
-    public Driver(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry,
-                  double maxSpeedTransport, String nameDriver, String driverLicence, int experienceDriver) {
-        super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport);
+
+    public Driver(String nameDriver, String driverLicence, int experienceDriver) {
         this.nameDriver = nameDriver;
         this.driverLicence = driverLicence;
         this.experienceDriver = experienceDriver;
@@ -41,20 +40,6 @@ public class Driver extends Transport {
         this.experienceDriver = experienceDriver;
     }
 
-    @Override
-    public void printType() {
-
-    }
-
-    @Override
-    public void refill() {
-
-    }
-
-    @Override
-    public void repair() {
-
-    }
 
 
     @Override

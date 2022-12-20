@@ -3,6 +3,8 @@ package transport;
 import transport.driver.Driver;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public abstract class Transport {
 
@@ -16,9 +18,9 @@ public abstract class Transport {
     private String productionCountry;
     private double maxSpeedTransport;
 
-    private final List<Driver<?>> drivers = new ArrayList<>();
-    private final List<Mechanic<?>> mechaics = new ArrayList<>();
-    private final List<Sponsor<?>> sponsors = new ArrayList<>();
+    private static final List<Driver<?>> drivers = new ArrayList<>();
+    private static final List<Mechanic<?>> mechaics = new ArrayList<>();
+    private static final List<Sponsor<?>> sponsors = new ArrayList<>();
 
 
     public Transport(String brand, String model, double engineVolume, String color, int productionYear,
@@ -64,7 +66,7 @@ public abstract class Transport {
         } else {
             this.maxSpeedTransport = maxSpeedTransport;
         }
-        drivers = new ArrayList<>();
+
     }
 
     public String getBrand() {
@@ -110,6 +112,9 @@ public abstract class Transport {
 
     public void setMaxSpeed(double maxSpeed) {
 
+
+
+
     }
 
     public abstract void printType();
@@ -117,10 +122,16 @@ public abstract class Transport {
     public  boolean service(){
         return false;
     }
-   // public void addDriver(Driver<?> driver){
-  //      drivers.add(driver);
-  //  }
 
+    public static void addDriver(Driver<?> driver){
+        drivers.add(driver);
+    }
+    public static void addMechanic(Mechanic<?> mechanic){
+        mechaics.add(mechanic);
+    }
+    public static void addSponsor(Sponsor<?> sponsor){
+        sponsors.add(sponsor);
+    }
 
 
 
@@ -137,7 +148,31 @@ public abstract class Transport {
 
     public abstract void repair();
 
+    @Override
+    public String toString() {
+        return "Transport{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", engineVolume=" + engineVolume +
+                ", color='" + color + '\'' +
+                ", productionYear=" + productionYear +
+                ", productionCountry='" + productionCountry + '\'' +
+                ", maxSpeedTransport=" + maxSpeedTransport +
+                '}';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport transport = (Transport) o;
+        return Double.compare(transport.engineVolume, engineVolume) == 0 && productionYear == transport.productionYear && Double.compare(transport.maxSpeedTransport, maxSpeedTransport) == 0 && brand.equals(transport.brand) && model.equals(transport.model) && color.equals(transport.color) && productionCountry.equals(transport.productionCountry) && drivers.equals(transport.drivers) && mechaics.equals(transport.mechaics) && sponsors.equals(transport.sponsors);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport, drivers, mechaics, sponsors);
+    }
 }
 
 

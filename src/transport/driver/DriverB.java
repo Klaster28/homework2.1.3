@@ -4,19 +4,41 @@ import transport.Car;
 
 import java.util.Objects;
 
-public class DriverB extends Driver {
+public class DriverB  extends Driver {
 
 
-    public DriverB(String brand, String model, double engineVolume, String color, int productionYear,
-                   String productionCountry, double maxSpeedTransport, String nameDriver, String driverLicence,
-                   int experienceDriver) {
-        super(brand, model, engineVolume, color, productionYear, productionCountry, maxSpeedTransport, nameDriver,
-                driverLicence, experienceDriver);
+    public DriverB(String nameDriver, String driverLicence, int experienceDriver) {
+        super(nameDriver, driverLicence, experienceDriver);
     }
 
-     @Override
-    public void refill() {
+    @Override
+    public String getNameDriver() {
+        return super.getNameDriver();
+    }
 
+    @Override
+    public void setNameDriver(String nameDriver) {
+        super.setNameDriver(nameDriver);
+    }
+
+    @Override
+    public String getDriverLicence() {
+        return super.getDriverLicence();
+    }
+
+    @Override
+    public void setDriverLicence(String driverLicence) {
+        super.setDriverLicence(driverLicence);
+    }
+
+    @Override
+    public int getExperienceDriver() {
+        return super.getExperienceDriver();
+    }
+
+    @Override
+    public void setExperienceDriver(int experienceDriver) {
+        super.setExperienceDriver(experienceDriver);
     }
 
     public void startMovement() {
@@ -27,10 +49,9 @@ public class DriverB extends Driver {
 
     }
 
-    @Override
-    public String toString() {
-        return "DriverB{}";
-    }
+
+
+
 
 }
 
